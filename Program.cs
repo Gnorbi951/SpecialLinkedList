@@ -6,7 +6,8 @@ namespace SpecLinkedList
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Application app = new Application();
+            app.Run();
         }
     }
 }
