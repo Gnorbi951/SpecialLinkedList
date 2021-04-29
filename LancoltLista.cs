@@ -53,7 +53,31 @@ namespace SpecLinkedList
             prev_node.next = new_node;
         }
 
-        public void DeleteNodebyValue(object value)
+        public void DeleteNodeByIndex(int index)
+        {
+            if (index == 0)
+            {
+                root = root.next;
+            }
+            try
+            {
+                Node previousNode = null;
+                Node currentNode = root;
+                for (int i=0; i<index; i++)
+                {
+                    previousNode = currentNode;
+                    currentNode = currentNode.next;
+                }
+                previousNode.next = currentNode.next;
+            }
+            catch(NullReferenceException exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+
+        }
+
+        public void DeleteNodeByValue(object value)
         {
             Node temp = root;
             Node prev = null;
