@@ -40,6 +40,30 @@ namespace SpecLinkedList
                 Last.next = n;
         }
 
+        public void Delete(object value)
+        {
+            Node node = new Node { data = value };
+            if (root == node)
+            {
+                root = node.next;
+                node.next = null;
+            }
+            else
+            {
+                Node current = root;
+                while (current.next != null)
+                {
+                    if (current.next == node)
+                    {
+                        current.next = node.next;
+                        node.next = null;
+                        break;
+                    }
+                    current = current.next;
+                }
+            }
+        }
+
         public void PrintList()
         {
             List<String> listData = new List<String>();

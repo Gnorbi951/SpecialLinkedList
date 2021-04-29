@@ -14,8 +14,10 @@ namespace SpecLinkedList
             lancoltLista.Append(1);
             lancoltLista.Append(2);
             lancoltLista.Append(3);
-            lancoltLista.Append("any type of object");
             lancoltLista.Append(5);
+            lancoltLista.Append("any type of object");
+            lancoltLista.PrintList();
+            lancoltLista.Delete(5);
             lancoltLista.PrintList();
         }
     }
