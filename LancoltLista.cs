@@ -6,14 +6,29 @@ namespace SpecLinkedList
 {
     class LancoltLista
     {
-        internal class Node
+        public class Node
         {
-            internal int data;
-            internal Node next;
-            public Node(int d)
+            // link to next Node in list
+            public Node next = null;
+            // value of this Node
+            public object data;
+        }
+        private Node root = null;
+
+        // Get the first element of the list
+        public Node First { get { return root; } }
+
+        //Get the last element of the list
+        public Node Last
+        {
+            get
             {
-                data = d;
-                next = null;
+                Node curr = root;
+                if (curr == null)
+                    return null;
+                while (curr.next != null)
+                    curr = curr.next;
+                return curr;
             }
         }
     }
