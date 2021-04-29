@@ -1,0 +1,1 @@
+﻿This is my first ever C# implemention of a LinkedList
