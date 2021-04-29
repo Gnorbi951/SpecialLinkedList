@@ -92,9 +92,16 @@ namespace SpecLinkedList
                 return root.data;
             }
             Node currentNode = root;
-            for (int i = 0; i < index; i++)
+            try
             {
-                currentNode = currentNode.next;
+                for (int i = 0; i < index; i++)
+                {
+                    currentNode = currentNode.next;
+                }
+            } catch (NullReferenceException exception)
+            {
+                Console.WriteLine(exception.Message);
+                return null;
             }
             return currentNode.data;
         }
