@@ -23,13 +23,41 @@ namespace SpecLinkedList
         {
             get
             {
-                Node curr = root;
-                if (curr == null)
+                Node currentNode = root;
+                if (currentNode == null)
                     return null;
-                while (curr.next != null)
-                    curr = curr.next;
-                return curr;
+                while (currentNode.next != null)
+                    currentNode = currentNode.next;
+                return currentNode;
             }
+        }
+        public void Append(object value)
+        {
+            Node n = new Node { data = value };
+            if (root == null)
+                root = n;
+            else
+                Last.next = n;
+        }
+
+        public void PrintList()
+        {
+            List<String> listData = new List<String>();
+            Node currentNode = root;
+            if (currentNode == null)
+            {
+                Console.WriteLine("List is empty");
+                return;
+            }
+            while (currentNode.next != null)
+            {
+                listData.Add(currentNode.data.ToString());
+                currentNode = currentNode.next;
+            }
+            listData.Add(currentNode.data.ToString());
+            Console.WriteLine("Linked list data:");
+            Console.WriteLine($"\t {String.Join(",", listData)}");
+
         }
     }
 }
