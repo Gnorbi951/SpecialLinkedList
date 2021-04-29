@@ -40,19 +40,6 @@ namespace SpecLinkedList
                 Last.next = n;
         }
 
-        public void InsertAfter(Node prev_node, object new_data)
-        {
-            if (prev_node == null)
-            {
-                Console.WriteLine("The given previous node Cannot be null");
-                return;
-            }
-            Node new_node = new Node();
-            new_node.data = new_data;
-            new_node.next = prev_node.next;
-            prev_node.next = new_node;
-        }
-
         public void DeleteNodeByIndex(int index)
         {
             if (index == 0)
@@ -96,6 +83,20 @@ namespace SpecLinkedList
                 return;
             }
             prev.next = temp.next;
+        }
+
+        public object getElementByIndex(int index)
+        {
+            if (index == 0)
+            {
+                return root.data;
+            }
+            Node currentNode = root;
+            for (int i = 0; i < index; i++)
+            {
+                currentNode = currentNode.next;
+            }
+            return currentNode.data;
         }
 
 

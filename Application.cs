@@ -17,6 +17,7 @@ namespace SpecLinkedList
             lancoltLista.Append("d");
             lancoltLista.Append("e");
             lancoltLista.DeleteNodeByIndex(8);
+            Console.WriteLine(lancoltLista.getElementByIndex(3));
             lancoltLista.PrintList();
         }
     }
