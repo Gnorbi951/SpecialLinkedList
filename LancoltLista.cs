@@ -40,7 +40,7 @@ namespace SpecLinkedList
                 Last.next = n;
         }
 
-        internal void InsertAfter(Node prev_node, object new_data)
+        public void InsertAfter(Node prev_node, object new_data)
         {
             if (prev_node == null)
             {
@@ -53,30 +53,27 @@ namespace SpecLinkedList
             prev_node.next = new_node;
         }
 
-
-
-        public void Delete(Node node)
+        public void DeleteNodebyValue(object value)
         {
-            if (root == node)
+            Node temp = root;
+            Node prev = null;
+            if (temp != null && temp.data == value)
             {
-                root = node.next;
-                node.next = null;
+                root = temp.next;
+                return;
             }
-            else
+            while (temp != null && temp.data != value)
             {
-                Node current = root;
-                while (current.next != null)
-                {
-                    if (current.next == node)
-                    {
-                        current.next = node.next;
-                        node.next = null;
-                        break;
-                    }
-                    current = current.next;
-                }
+                prev = temp;
+                temp = temp.next;
             }
+            if (temp == null)
+            {
+                return;
+            }
+            prev.next = temp.next;
         }
+
 
         public void PrintList()
         {
