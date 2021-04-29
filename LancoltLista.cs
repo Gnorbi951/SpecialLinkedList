@@ -40,9 +40,23 @@ namespace SpecLinkedList
                 Last.next = n;
         }
 
-        public void Delete(object value)
+        internal void InsertAfter(Node prev_node, object new_data)
         {
-            Node node = new Node { data = value };
+            if (prev_node == null)
+            {
+                Console.WriteLine("The given previous node Cannot be null");
+                return;
+            }
+            Node new_node = new Node();
+            new_node.data = new_data;
+            new_node.next = prev_node.next;
+            prev_node.next = new_node;
+        }
+
+
+
+        public void Delete(Node node)
+        {
             if (root == node)
             {
                 root = node.next;
