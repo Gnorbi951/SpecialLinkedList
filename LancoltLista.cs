@@ -40,7 +40,7 @@ namespace SpecLinkedList
                 Last.next = n;
         }
 
-        public void DeleteNodeByIndex(int index)
+        public void DeleteElementByIndex(int index)
         {
             if (index == 0)
             {
@@ -64,7 +64,7 @@ namespace SpecLinkedList
 
         }
 
-        public void DeleteNodeByValue(object value)
+        public void DeleteElementByValue(object value)
         {
             Node temp = root;
             Node prev = null;
